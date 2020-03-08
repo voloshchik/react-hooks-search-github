@@ -1,12 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="container pt-4">
-      <h1>Hellow world</h1>
-    </div>
+    <>
+    <Navbar/>
+      <div className="container pt-4">
+        <Home/>
+      </div>
+    </>
   );
 }
 
