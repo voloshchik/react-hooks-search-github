@@ -8,7 +8,7 @@ const Card = () => {
       <div className="card-body">
         <div className="card-title">
           <h5>React Js</h5>
-          <Link className="btn btn-primary" to={"/profile/" + "react"}>
+          <Link className="btn btn-primary" to={"/profile/"}>
             Открыть
           </Link>
         </div>
