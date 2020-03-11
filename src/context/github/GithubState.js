@@ -10,7 +10,7 @@ const GithubState = ({ children }) => {
         repos:[]
     }
 const [state, dispatch] = useReducer(githabReducer, initialState)
-console.log('githabReducer', state)
+console.log('githabReducer')
 
   return <GithubContect.Provider>{children}</GithubContect.Provider>;
 };
