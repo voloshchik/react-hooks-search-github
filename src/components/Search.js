@@ -1,19 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AlertContext } from "../context/alert/alertContext";
 
 const Search = () => {
   const { show } = useContext(AlertContext);
-
+  const [value, setValue] = useState("");
   const onSubmit = event => {
-    if (event.key === "Enter") {
-      show("This is alert!");
-      console.log("event.key", event.key);
+    if (event.key !== "Enter") {
+      return;
+    }
+    if (value.trim()) {
+      console.log("Make request with", value);
+    } else {
+      show("Введите данные пользователя");
     }
   };
 
   return (
     <div className="form-group">
       <input
+        value={value}
+        onChange={event => setValue(event.target.value)}
         type="text"
         className="form-control"
         placeholder="Введите ник пользователя..."
