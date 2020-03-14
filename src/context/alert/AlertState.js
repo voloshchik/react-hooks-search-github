@@ -7,7 +7,7 @@ export const AlertState = ({ children }) => {
   const [state, dispatch] = useReducer(alertReducer, null);
 
   const hide = () => dispatch({ type: HIDE_ALERT });
-  console.log("AlertState", state);
+
   const show = (text, type = "secondary") => {
     dispatch({
       type: SHOW_ALERT,
