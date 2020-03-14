@@ -3,14 +3,18 @@ import { AlertContext } from "../context/alert/alertContext";
 import { GithubContect } from "../context/github/githubContext";
 
 const Search = () => {
-  const { show } = useContext(AlertContext);
+  const { show,hide } = useContext(AlertContext);
   const [value, setValue] = useState("");
   const github = useContext(GithubContect);
   const onSubmit = event => {
     if (event.key !== "Enter") {
       return;
     }
+    github.clearUsers()
+
+
     if (value.trim()) {
+      hide()
       console.log("Make request with", value);
       github.search(value.trim())
     } else {
